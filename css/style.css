@@ -1,0 +1,313 @@
+@import "functions";
+@import "variables";
+@import "mixins";
+@import "utilities";
+@import "root";
+@import "reboot";
+@import "type";
+@import "images";
+@import "containers";
+@import "grid";
+@import "tables";
+@import "forms";
+@import "buttons";
+@import "transitions";
+@import "dropdown";
+@import "button-group";
+@import "nav";
+@import "navbar";
+@import "card";
+@import "accordion";
+@import "breadcrumb";
+@import "pagination";
+@import "badge";
+@import "alert";
+@import "progress";
+@import "list-group";
+@import "close";
+@import "toasts";
+@import "modal";
+@import "tooltip";
+@import "popover";
+@import "carousel";
+@import "spinners";
+@import "offcanvas";
+@import "helpers";
+@import "utilities/api";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .3s;
+}
+
+:root {
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+}
+body{
+    background-image: url("https://i.ibb.co/9t03GjW/top-view-circular-food-frame.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header {
+    display: block;
+
+    margin-top: 0px;
+
+    background-color: var(--bs-red);
+    width: 100%;
+    font-weight: 600;
+    font-size: 50px;
+    box-shadow: 0 0 16px #11101d;
+
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar:hover {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+
+    background: var(--bs-danger);
+    border-radius: 20%;
+    transition: all ease .3s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #f63c4f;
+
+}
+
+.header-image {
+    width: 120px;
+    height: 100px;
+    animation-name: drive;
+    margin-left: 0%;
+    animation-duration: 5s;
+    /* width: 100%; */
+
+}
+
+.header header button {
+    display: none;
+
+}
+
+.header-image header img {
+    animation-name: drive;
+    margin-left: 0%;
+    animation-duration: 5s linear forwards;
+    z-index: 300;
+    float: left;
+}
+
+@keyframes drive {
+    from {
+        margin-left: 0%;
+    }
+
+    to {
+        margin-left: 60%;
+
+    }
+
+}
+
+.filters {
+    float: right;
+    position: fixed;
+    /* border: 2px solid black; */
+    width: 30%;
+    margin-left: 60%;
+    box-shadow: 0 0 6px #a4a2b2;
+    border-radius: 4%;
+   
+        background-color: #fff;
+        background-color: rgba(255,255,255,0.5);
+  
+
+
+}
+
+.price-tags,
+.food-specification {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.menu h3 {
+    margin-top: 15px;
+}
+
+.listing {
+    float: left;
+
+    width: 60%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 75vh;
+    box-shadow: 0 0 6px #a4a2b2;
+    border-radius: 4%;
+    background-color: #fff;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.filters h3 {
+    margin: auto;
+    margin-right: 5%;
+}
+
+.splash {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bs-danger);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 1s;
+    z-index: 100;
+
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        z-index: 100;
+        opacity: 1;
+    }
+
+    100% {
+        z-index: 0;
+        opacity: 0;
+        display: none;
+    }
+}
+
+.logo_m {
+    font-size: 100px;
+    font-weight: 400;
+}
+
+.fixed-content-of-main {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 80%;
+}
+
+.fixed-content-of-main-modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 80%;
+}
+
+@media (max-width: 869px) {
+    .fixed-content-of-main {
+        display: none;
+    }
+
+    .filters {
+        float: none;
+        position: absolute;
+        width: 100%;
+        margin-left: 5%;
+        box-shadow: 0 0 6px #a4a2b2;
+        border-radius: 4%;
+
+
+    }
+
+    .list-group-item {
+        font-size: 20px;
+    }
+
+    .fixed-content-of-main-modal {
+        display: block;
+        width: 90%;
+
+    }
+
+    .listing {
+        width: 100%;
+
+    }
+
+
+    .header header button {
+        display: block;
+        margin-top: 5px;
+        margin: auto;
+
+    }
+    .header-image {
+      display: none;
+    }
+}
+@media (max-width: 1135px) {
+    @keyframes drive {
+        from {
+            margin-left: 0%;
+        }
+    
+        to {
+            margin-left: 50%;
+    
+        }
+    }
+}
+@media (max-width: 900px) {
+    @keyframes drive {
+        from {
+            margin-left: 0%;
+        }
+    
+        to {
+            margin-left: 40%;
+    
+        }
+    }
+}
+@media (max-width: 658px) {
+ .logo_m
+ {
+   font-size: 40px;
+ }
+}
